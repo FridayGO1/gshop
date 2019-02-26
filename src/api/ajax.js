@@ -24,10 +24,11 @@ export default function ajax(url, data={}, type='GET') {
             // 发送get请求
             promise = axios.get(url)
         } else {
+            // 发送 post 请求
             promise = axios.post(url, data)
         }
 
-        promise.then(function (response) {
+        promise.then(response => {
             // 成功了调用resolve()
             resolve(response.data)
         })
@@ -36,13 +37,5 @@ export default function ajax(url, data={}, type='GET') {
             reject(error)
         })
 
-            
-
-            
-
-        })
-
-    
-
-    return promise
+    })
 }
